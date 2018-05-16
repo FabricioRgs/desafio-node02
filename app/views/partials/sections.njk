@@ -1,0 +1,28 @@
+<nav>
+  <div class="sessions">
+    {% for section in sections %}
+      <a class="{% if section.id == activeSection %}active{% endif %}" href="/app/section/{{ section.id }}">{{ section.title }}</a>
+    {% endfor %}
+  </div>
+
+  {# <form action="" method="post">
+    <input type="text" name="name" placeholder="Nova seção">
+    <button type="submit" class="btn"><img src="/img/plus.svg"></button>
+  </form> #}
+  <div class="list-header">
+    <a class="btn" href="#" data-modal-open="#new-snippet">Nova seção</a>
+  </div>
+</nav>
+
+<div class="modal" id="new-snippet">
+  <form class="modal-content" method="POST" action="/app/categories/{{ activeCategory }}/snippets/create">
+    <input type="text" name="title" placeholder="Titulo da Snippet">
+
+    <div class="content-container">
+      <textarea name="content" class="mde" placeholder="Conteúdo do snippet"></textarea>
+    </div>
+
+    <button type="submit">Salvar seção</button>
+    <a href="#" data-modal-close="#new-snippet">Cancelar</a>
+  </form>
+</div>

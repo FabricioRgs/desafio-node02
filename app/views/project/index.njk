@@ -1,0 +1,21 @@
+{% include 'layouts/default.njk' %}
+{% block body %}
+  <div class="wrapper">
+    {% include 'partials/header.njk' %}
+    <section id="main">
+      <div class="container">
+        <header>
+          <h2>{{ project.name }}</h2>
+          <div class="addon">
+            <a href="" class="btn btn-dangerWithoutIcon">Excluir projeto</a>
+          </div>
+        </header>
+
+        <section id="content">
+          {% include 'partials/sections.njk' %}
+          {% include 'section/show.njk' %}
+        </section>
+      </div>
+    </section>
+  </div>
+{% endblock %}
